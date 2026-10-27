@@ -2,23 +2,21 @@
 ---
 
 ## Fase 1: Setup e Infraestrutura
-- [ ] Inicializar projeto Next.js com TypeScript e Tailwind CSS (`npx create-next-app@latest`).
-- [ ] Criar projeto no **Supabase** e executar o script SQL de criação da tabela `participants`.
-- [ ] Criar conta no **Resend** e gerar a `RESEND_API_KEY`.
-- [ ] Configurar o arquivo `.env.local` com as chaves do Supabase, Resend, `ADMIN_PASSWORD` e `NEXT_PUBLIC_APP_URL`.
-- [ ] Instalar pacotes necessários (`@supabase/supabase-js`, `resend`, `lucide-react`).
-- [ ] Configurar cliente do Supabase apenas para o lado do servidor (`lib/supabase.ts`).
+- [X] Inicializar projeto Next.js com TypeScript e Tailwind CSS (`npx create-next-app@latest`).
+- [X] Criar projeto no **Supabase** e executar o script SQL de criação da tabela `participants`.
+- [x] Configurar o arquivo `.env.local` com as chaves do Supabase, Resend, `ADMIN_PASSWORD` e `NEXT_PUBLIC_APP_URL`.
+- [x] Instalar pacotes necessários (`@supabase/supabase-js`, `lucide-react`).
+- [x] Configurar cliente do Supabase apenas para o lado do servidor (`lib/supabase.ts`).
 
 ---
 
 ## Fase 2: Tela Inicial e Cadastro (`/` — Módulo 1)
-- [ ] **[RNF01]** Criar layout base Mobile-First (`max-w-md mx-auto min-h-screen`) com tema visual de verão/chinelas.
-- [ ] **[RF01]** Construir formulário de cadastro:
-  - [ ] Input de **Nome Completo**.
-  - [ ] Input de **WhatsApp** com máscara `(99) 99999-9999` e `inputMode="numeric"`.
-  - [ ] Input de **E-mail** (`type="email"`).
-  - [ ] Grade de botões selecionáveis para **Tamanho do Chinelo** (`33-34`, `35-36`, `37-38`, `39-40`, `41-42`, `43-44`, `45-46`).
-  - [ ] Input de **PIN de 4 dígitos** (`maxLength={4}`, `inputMode="numeric"`).
+- [x] **[RNF01]** Criar layout base Mobile-First (`max-w-md mx-auto min-h-screen`) com tema visual de verão/chinelas.
+- [x] **[RF01]** Construir formulário de cadastro:
+  - [x] Input de **Nome Completo**.
+  - [x] Input de **WhatsApp** com máscara `(99) 99999-9999` e `inputMode="numeric"`.
+  - [x] Grade de botões selecionáveis para **Tamanho do Chinelo** (`33-34`, `35-36`, `37-38`, `39-40`, `41-42`, `43-44`, `45-46`).
+  - [x] Input de **PIN de 4 dígitos** (`maxLength={4}`, `inputMode="numeric"`).
 - [ ] **[RF02]** Criar Server Action / API de cadastro validando se `phone` ou `email` já existem no banco (retornar mensagem amigável se duplicado).
 - [ ] **[RF03]** Criar listagem pública na tela inicial exibindo apenas o nome dos participantes cadastrados (`🩴 Fulano`) e o total de inscritos.
 - [ ] **[RF04]** Verificar se o sorteio já foi realizado (ex: checando se os registros possuem `drawn_id != null`). Se sim, ocultar o formulário e mostrar o card de *"Sorteio já realizado!"*.
