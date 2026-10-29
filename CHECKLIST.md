@@ -37,12 +37,11 @@
 
 ---
 
-## Fase 4: Notificações Sem Spoiler (E-mail e WhatsApp)
-- [ ] **[RF08]** Integrar **Resend** na função de sorteio para disparar um e-mail a cada participante contendo apenas o convite e o link `https://seusite.vercel.app/sorteio/[secret_token]` (sem mencionar quem foi sorteado).
-- [ ] **[RF08]** Adicionar botão **"📧 Reenviar E-mail"** individual na linha de cada participante no painel `/admin`.
-- [ ] **[RF09]** Adicionar botão **"📲 Enviar WhatsApp"** na linha de cada participante no `/admin`:
-  - [ ] Gerar URL `https://wa.me/55[TELEFONE]?text=[MENSAGEM_COM_LINK_DO_TOKEN]` (sem mencionar quem foi sorteado).
-  - [ ] Ao clicar no botão, atualizar `whatsapp_sent = true` no banco e mudar a cor/texto do botão para `"✅ WhatsApp Clicado"`.
+## Fase 4: Notificações Sem Spoiler (WhatsApp)
+- [ ] **[RF09]** Criar Server Action `markWhatsappSent(id)` para registrar no banco (`whatsapp_sent = true`) quando o organizador clicar no botão de envio.
+- [ ] **[RF09]** Adicionar botão de disparo de WhatsApp na linha de cada participante no painel `/noodle` (exibido após a realização do sorteio):
+  - [ ] Gerar URL dinâmica `https://wa.me/55[TELEFONE]?text=[MENSAGEM_COM_LINK_DO_TOKEN]` usando a origem atual do site (`NEXT_PUBLIC_APP_URL` ou `window.location.origin`), sem revelar quem foi sorteado.
+  - [ ] Ao clicar no botão, abrir a conversa do WhatsApp em nova aba, atualizar `whatsapp_sent = true` no banco e alterar o visual do botão de **"Enviar WhatsApp"** (com ícone `Send`) para **"WhatsApp Clicado"** (com ícone `CheckCheck`).
 
 ---
 
