@@ -43,7 +43,7 @@ export async function registerParticipant(formData: FormData) {
     const pin = (formData.get('pin') as string)?.trim();
 
     if (!name || !phone || !shoe_size || !pin) {
-        return { error: 'Preencha todos os campos e selecione o tamanho do chinelo.' };
+        return { error: 'Preencha todos os campos e escolha a numeração da sua Havaianas.' };
     }
 
     if (phone.length < 10 || phone.length > 11) {

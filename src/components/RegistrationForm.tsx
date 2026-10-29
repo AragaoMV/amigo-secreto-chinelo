@@ -43,7 +43,10 @@ export default function RegistrationForm() {
     setMessage({ type: '', text: '' });
 
     if (!shoeSize) {
-      setMessage({ type: 'error', text: 'Selecione o tamanho do chinelo.' });
+      setMessage({
+        type: 'error',
+        text: 'Escolha a numeração da sua Havaianas antes de continuar!',
+      });
       setLoading(false);
       return;
     }
@@ -59,7 +62,7 @@ export default function RegistrationForm() {
     } else if (res?.success) {
       setMessage({
         type: 'success',
-        text: 'Inscrição confirmada! Seu nome já está no mural de Natal.',
+        text: 'Tudo pronto! Seu nome já está na árvore do nosso sorteio.',
       });
       form.reset();
       setPhone('');
@@ -75,20 +78,20 @@ export default function RegistrationForm() {
     >
       <div>
         <label className="block text-sm font-semibold text-gray-800 mb-1">
-          Nome Completo
+          Seu Nome (ou como a família te chama)
         </label>
         <input
           name="name"
           type="text"
           required
           className="w-full px-4 py-3 rounded-xl bg-gray-50 border border-gray-200 text-gray-900 focus:ring-2 focus:ring-red-700 outline-none transition"
-          placeholder="Ex: Maria da Silva"
+          placeholder="Ex: Tia Márcia / Lucas"
         />
       </div>
 
       <div>
         <label className="block text-sm font-semibold text-gray-800 mb-1">
-          WhatsApp (com DDD)
+          Seu WhatsApp (para receber quem você tirou)
         </label>
         <input
           name="phone"
@@ -105,7 +108,7 @@ export default function RegistrationForm() {
       <div>
         <label className="flex items-center gap-1.5 text-sm font-semibold text-gray-800 mb-2">
           <Footprints size={16} className="text-red-700" />
-          <span>Tamanho do Chinelo</span>
+          <span>Qual a numeração da sua Havaianas?</span>
         </label>
         <div className="grid grid-cols-4 gap-2">
           {SHOE_SIZES.map((size) => (
@@ -127,10 +130,10 @@ export default function RegistrationForm() {
 
       <div>
         <label className="block text-sm font-semibold text-gray-800 mb-1">
-          PIN de Segurança (4 números)
+          Crie sua Senha Secreta (4 números)
         </label>
         <p className="text-xs text-gray-500 mb-2">
-          Guarde essa senha. Você vai usá-la para abrir o seu resultado no WhatsApp.
+          Anote para não esquecer! Ela protege o seu sorteio para ninguém espiar antes da hora.
         </p>
         <input
           name="pin"
@@ -162,10 +165,10 @@ export default function RegistrationForm() {
         className="w-full bg-gradient-to-r from-red-700 to-red-600 text-white font-bold py-4 rounded-xl shadow-md hover:from-red-800 hover:to-red-700 transition disabled:opacity-50 flex items-center justify-center gap-2 cursor-pointer"
       >
         {loading ? (
-          'Confirmando...'
+          'Registrando...'
         ) : (
           <>
-            <Gift size={20} /> Participar do Sorteio de Natal
+            <Gift size={20} /> Entrar no amigo oculto
           </>
         )}
       </button>

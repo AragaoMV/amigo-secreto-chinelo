@@ -17,23 +17,23 @@
   - [x] Input de **WhatsApp** com máscara `(99) 99999-9999` e `inputMode="numeric"`.
   - [x] Grade de botões selecionáveis para **Tamanho do Chinelo** (`33-34`, `35-36`, `37-38`, `39-40`, `41-42`, `43-44`, `45-46`).
   - [x] Input de **PIN de 4 dígitos** (`maxLength={4}`, `inputMode="numeric"`).
-- [ ] **[RF02]** Criar Server Action / API de cadastro validando se `phone` ou `email` já existem no banco (retornar mensagem amigável se duplicado).
-- [ ] **[RF03]** Criar listagem pública na tela inicial exibindo apenas o nome dos participantes cadastrados (`🩴 Fulano`) e o total de inscritos.
-- [ ] **[RF04]** Verificar se o sorteio já foi realizado (ex: checando se os registros possuem `drawn_id != null`). Se sim, ocultar o formulário e mostrar o card de *"Sorteio já realizado!"*.
+- [x] **[RF02]** Criar Server Action / API de cadastro validando se `phone` ou `email` já existem no banco (retornar mensagem amigável se duplicado).
+- [x] **[RF03]** Criar listagem pública na tela inicial exibindo apenas o nome dos participantes cadastrados (`🩴 Fulano`) e o total de inscritos.
+- [x] **[RF04]** Verificar se o sorteio já foi realizado (ex: checando se os registros possuem `drawn_id != null`). Se sim, ocultar o formulário e mostrar o card de *"Sorteio já realizado!"*.
 
 ---
 
 ## Fase 3: Painel do Organizador (`/admin` — Módulo 2)
-- [ ] **[RF05]** Criar tela de login simples em `/admin` validando a senha com `ADMIN_PASSWORD` (salvar sessão em cookie HTTP-only ou estado local).
-- [ ] **[RF06]** Listar tabela de inscritos no painel contendo: Nome, WhatsApp, E-mail, Tamanho do Chinelo e o **PIN**.
-- [ ] **[RF06]** Adicionar funcionalidade para **Editar** dados de um participante (ex: corrigir telefone, e-mail ou tamanho) e **Excluir** participante (habilitado apenas antes do sorteio).
-- [ ] **[RF07]** Implementar a função de **Sorteio em Fila Circular** no back-end:
-  - [ ] Validar se há no mínimo 3 participantes cadastrados.
-  - [ ] Embaralhar a lista de participantes aleatoriamente (*Fisher-Yates*).
-  - [ ] Vincular cada participante ao próximo da lista (`participante[i].drawn_id = participante[i + 1].id`) e o último ao primeiro (`participante[ultimo].drawn_id = participante[0].id`).
-  - [ ] Salvar todos os pares no banco de dados.
-- [ ] **[RF10]** Exibir coluna de status de visualização (`⏳ Pendente` quando `viewed_at` for nulo, ou `✅ Já viu` com data/hora formatada).
-- [ ] **[RF11]** Criar botão **"Resetar Sorteio"** com confirmação dupla que limpa `drawn_id = null`, `viewed_at = null` e `whatsapp_sent = false` de todos os registros.
+- [x] **[RF05]** Criar tela de login simples em `/admin` validando a senha com `ADMIN_PASSWORD` (salvar sessão em cookie HTTP-only ou estado local).
+- [x] **[RF06]** Listar tabela de inscritos no painel contendo: Nome, WhatsApp, E-mail, Tamanho do Chinelo e o **PIN**.
+- [x] **[RF06]** Adicionar funcionalidade para **Editar** dados de um participante (ex: corrigir telefone, e-mail ou tamanho) e **Excluir** participante (habilitado apenas antes do sorteio).
+- [x] **[RF07]** Implementar a função de **Sorteio em Fila Circular** no back-end:
+  - [x] Validar se há no mínimo 3 participantes cadastrados.
+  - [x] Embaralhar a lista de participantes aleatoriamente (*Fisher-Yates*).
+  - [x] Vincular cada participante ao próximo da lista (`participante[i].drawn_id = participante[i + 1].id`) e o último ao primeiro (`participante[ultimo].drawn_id = participante[0].id`).
+  - [x] Salvar todos os pares no banco de dados.
+- [x] **[RF10]** Exibir coluna de status de visualização (`⏳ Pendente` quando `viewed_at` for nulo, ou `✅ Já viu` com data/hora formatada).
+- [x] **[RF11]** Criar botão **"Resetar Sorteio"** com confirmação dupla que limpa `drawn_id = null`, `viewed_at = null` e `whatsapp_sent = false` de todos os registros.
 
 ---
 
