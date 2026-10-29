@@ -46,14 +46,14 @@
 ---
 
 ## Fase 5: Revelação Protegida (`/sorteio/[token]` — Módulo 3)
-- [ ] **[RF12]** Criar página dinâmica `/sorteio/[token]` que busca no servidor apenas o `name` do dono do `secret_token` (retornar página de erro caso o token não exista ou o sorteio ainda não tenha ocorrido).
-- [ ] **[RF12]** Exibir tela bloqueada: *"Olá [Fulano]! Digite seu PIN de 4 dígitos para revelar quem você tirou"* com campo numérico de 4 dígitos e botão de confirmar.
-- [ ] **[RF13]** Criar Server Action / API de validação do PIN:
-  - [ ] Receber `secret_token` e `pin`.
-  - [ ] Verificar se o PIN está correto para aquele token (retornar erro `"PIN incorreto"` se falhar).
-  - [ ] Se correto e `viewed_at` estiver vazio, gravar `NOW()` no campo `viewed_at`.
-  - [ ] Buscar e retornar apenas o `name` e o `shoe_size` do participante referenciado em `drawn_id`.
-- [ ] **[RF14]** Exibir na tela o resultado desbloqueado no formato exato:
+- [x] **[RF12]** Criar página dinâmica `/sorteio/[token]` que busca no servidor apenas o `name` do dono do `secret_token` (retornar página de erro caso o token não exista ou o sorteio ainda não tenha ocorrido).
+- [x] **[RF12]** Exibir tela bloqueada: *"Olá [Fulano]! Digite seu PIN de 4 dígitos para revelar quem você tirou"* com campo numérico de 4 dígitos e botão de confirmar.
+- [x] **[RF13]** Criar Server Action / API de validação do PIN:
+  - [x] Receber `secret_token` e `pin`.
+  - [x] Verificar se o PIN está correto para aquele token (retornar erro `"PIN incorreto"` se falhar).
+  - [x] Se correto e `viewed_at` estiver vazio, gravar `NOW()` no campo `viewed_at`.
+  - [x] Buscar e retornar apenas o `name` e o `shoe_size` do participante referenciado em `drawn_id`.
+- [x] **[RF14]** Exibir na tela o resultado desbloqueado no formato exato:
   > **“Olá [Fulano], você tirou:**
   > 
   > **Nome:** [Siclano da Silva] **Tamanho:** [35-36]”
@@ -61,10 +61,10 @@
 ---
 
 ## Fase 6: Testes Finais e Deploy
-- [ ] Cadastrar 4 usuários fictícios na tela inicial e testar a trava de e-mail/telefone duplicado.
-- [ ] Entrar no `/admin`, realizar o sorteio e verificar se o formulário da tela inicial bloqueou novas inscrições.
-- [ ] Testar o clique no botão de WhatsApp e verificar se o link abre corretamente sem dar spoiler do sorteado.
-- [ ] Abrir o link `/sorteio/[token]` de um usuário, testar um PIN errado (deve bloquear) e depois o PIN certo (deve exibir o nome e tamanho do sorteado).
-- [ ] Verificar no `/admin` se o status do usuário mudou para `✅ Já viu`.
-- [ ] Usar o botão **"Resetar Sorteio"** para limpar o banco de testes.
-- [ ] Subir o repositório no GitHub, conectar na **Vercel**, configurar as variáveis de amb
+- [x] Cadastrar 4 usuários fictícios na tela inicial e testar a trava de e-mail/telefone duplicado.
+- [x] Entrar no `/admin`, realizar o sorteio e verificar se o formulário da tela inicial bloqueou novas inscrições.
+- [x] Testar o clique no botão de WhatsApp e verificar se o link abre corretamente sem dar spoiler do sorteado.
+- [x] Abrir o link `/sorteio/[token]` de um usuário, testar um PIN errado (deve bloquear) e depois o PIN certo (deve exibir o nome e tamanho do sorteado).
+- [x] Verificar no `/admin` se o status do usuário mudou para `✅ Já viu`.
+- [x] Usar o botão **"Resetar Sorteio"** para limpar o banco de testes.
+- [x] Subir o repositório no GitHub, conectar na **Vercel**, configurar as variáveis de amb
